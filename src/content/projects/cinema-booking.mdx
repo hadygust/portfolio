@@ -1,0 +1,33 @@
+---
+title: cinema-booking
+summary: A concurrency-safe seat reservation system that uses Redis distributed locks so two people can never book the same seat.
+kind: side
+order: 1
+stack: [Go, Redis, Docker]
+links:
+  - label: Source on GitHub
+    href: https://github.com/hadygust/cinema-booking
+---
+
+## The problem
+
+Without protection, two users who book the same seat at the same instant can both succeed:
+
+```
+User A ── read seat A1 → "free" ── write booking ── success
+User B ── read seat A1 → "free" ── write booking ── success   (double booking)
+```
+
+## Approach
+
+The project compares three storage strategies behind the same booking interface:
+
+- an in-memory store with no locking, which shows the race;
+- an in-memory store with locking;
+- a Redis store with distributed locks, which works across multiple server replicas.
+
+When a user selects a seat, the server tries to take a Redis lock on that seat ID with a short TTL. If it gets the lock, the booking is committed and the lock is released. If another request already holds the lock, the user is told right away that the seat is taken.
+
+## Proof
+
+Tests fire simultaneous booking requests at the same seat and run under Go's race detector (`go test -race`). They prove that exactly one booking succeeds.

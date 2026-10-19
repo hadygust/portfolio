@@ -1,0 +1,28 @@
+---
+import Section from '../Section.astro';
+import { site } from '../../data/site';
+
+const rows = [
+  { label: 'Email', value: site.email, href: `mailto:${site.email}` },
+  { label: 'Phone', value: site.phone.display, href: site.phone.href },
+  ...site.socials.map((s) => ({ label: s.label, value: s.handle, href: s.href, external: true })),
+];
+---
+
+<Section title="Contact" id="contact">
+  <p class="max-w-prose text-lg text-ink/90">Email is the quickest way to reach me.</p>
+  <dl class="mt-6 grid max-w-xl grid-cols-[6rem_1fr] gap-x-6 gap-y-3">
+    {
+      rows.map((r) => (
+        <>
+          <dt class="text-muted">{r.label}</dt>
+          <dd class="min-w-0 break-words">
+            <a href={r.href} class="link" rel={'external' in r ? 'noopener noreferrer' : undefined}>
+              {r.value}
+            </a>
+          </dd>
+        </>
+      ))
+    }
+  </dl>
+</Section>

@@ -1,0 +1,19 @@
+---
+import Section from '../Section.astro';
+import WorkSlip from '../WorkSlip.astro';
+import { getProjects } from '../../data/projects';
+
+const { work } = await getProjects();
+---
+
+{
+  work.length > 0 && (
+    <Section title="Professional work" id="work" stacked intro="Production systems I designed and built for real businesses.">
+      <div class="flex flex-col gap-8">
+        {work.map((project) => (
+          <WorkSlip project={project} />
+        ))}
+      </div>
+    </Section>
+  )
+}

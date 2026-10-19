@@ -1,0 +1,8 @@
+---
+interface Props {
+  items: string[];
+}
+const { items } = Astro.props;
+---
+
+<p class="font-condensed text-[0.9375rem] text-pretty text-muted">{items.join(', ')}</p>

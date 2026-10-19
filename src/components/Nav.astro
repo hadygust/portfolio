@@ -1,0 +1,82 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+import ResumeLink from './ResumeLink.astro';
+import { site } from '../data/site';
+
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isCurrent = (href: string) => path === href || path.startsWith(`${href}/`);
+// On the homepage the hero shows the name large, so the nav name starts hidden
+// and fades in once the hero heading scrolls out of view (script below).
+const hideName = path === '/';
+const itemClass =
+  'inline-flex min-h-11 items-center rounded-md px-2 text-muted transition-colors hover:text-ink aria-[current=page]:text-ink aria-[current=page]:underline aria-[current=page]:decoration-accent aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-8';
+---
+
+<header
+  data-site-header
+  class="sticky top-0 z-40 border-b border-transparent bg-bg transition-colors duration-300 data-[stuck]:border-line"
+>
+  <div class="wrap flex items-center justify-between gap-x-4 py-2 sm:py-3">
+    <a
+      href="/"
+      data-nav-name
+      data-hidden={hideName ? '' : undefined}
+      tabindex={hideName ? -1 : undefined}
+      aria-hidden={hideName ? 'true' : undefined}
+      class="font-condensed inline-flex min-h-11 items-center text-lg font-semibold whitespace-nowrap text-ink transition-[opacity,translate] duration-300 ease-out data-[hidden]:pointer-events-none data-[hidden]:translate-y-1 data-[hidden]:opacity-0"
+    >
+      {site.name}
+    </a>
+    <nav aria-label="Main" class="-mr-2 flex items-center">
+      <ul class="flex items-center gap-x-1 text-[0.9375rem]">
+        {
+          site.nav.map((item) => (
+            <li>
+              <a href={item.href} class={itemClass} aria-current={isCurrent(item.href) ? 'page' : undefined}>
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+        {
+          site.resume && (
+            <li class="ml-2 hidden sm:block">
+              <ResumeLink variant="nav">Resume</ResumeLink>
+            </li>
+          )
+        }
+        <li><ThemeToggle /></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector<HTMLElement>('[data-site-header]');
+  const name = document.querySelector<HTMLElement>('[data-nav-name]');
+  const hero = document.getElementById('hero-heading');
+
+  // Divider under the sticky header once the page has scrolled.
+  const onScroll = () => header?.toggleAttribute('data-stuck', window.scrollY > 0);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Nav name appears only after the hero name has scrolled under the header.
+  if (name && hero && name.hasAttribute('data-hidden')) {
+    const offset = header?.offsetHeight ?? 0;
+    new IntersectionObserver(
+      ([entry]) => {
+        const heroVisible = entry.isIntersecting;
+        name.toggleAttribute('data-hidden', heroVisible);
+        if (heroVisible) {
+          name.setAttribute('tabindex', '-1');
+          name.setAttribute('aria-hidden', 'true');
+        } else {
+          name.removeAttribute('tabindex');
+          name.removeAttribute('aria-hidden');
+        }
+      },
+      { rootMargin: `-${offset}px 0px 0px 0px` },
+    ).observe(hero);
+  }
+</script>

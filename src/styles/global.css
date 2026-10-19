@@ -1,0 +1,198 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/archivo/wdth.css';
+@plugin '@tailwindcss/typography';
+
+/*
+ * Kraft & Ink design tokens (see DESIGN.md).
+ * Colors are CSS variables so light/dark is one swap:
+ * - no data-theme  -> follows the OS (prefers-color-scheme)
+ * - data-theme=... -> manual choice from the theme toggle
+ */
+:root {
+  --bg: #f6f4f0;
+  --surface: #fffdf9;
+  --text: #2b2622;
+  --muted: #6b6158;
+  --line: #e3dcd1;
+  --kraft: #d9c4a3;
+  --kraft-soft: #efe5d5;
+  --accent: #8a5527;
+  --accent-hover: #6e4220;
+  --on-accent: #fffdf9;
+  --shadow: 0 1px 0 rgb(43 38 34 / 0.04), 0 12px 28px -16px rgb(74 52 30 / 0.28);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #1c1916;
+    --surface: #252119;
+    --text: #eee7dc;
+    --muted: #a99d8f;
+    --line: #3a332b;
+    --kraft: #7d6547;
+    --kraft-soft: #2e271f;
+    --accent: #ddb37c;
+    --accent-hover: #ebcb9f;
+    --on-accent: #1c1916;
+    --shadow: 0 1px 0 rgb(0 0 0 / 0.2), 0 16px 32px -18px rgb(0 0 0 / 0.6);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #1c1916;
+  --surface: #252119;
+  --text: #eee7dc;
+  --muted: #a99d8f;
+  --line: #3a332b;
+  --kraft: #7d6547;
+  --kraft-soft: #2e271f;
+  --accent: #ddb37c;
+  --accent-hover: #ebcb9f;
+  --on-accent: #1c1916;
+  --shadow: 0 1px 0 rgb(0 0 0 / 0.2), 0 16px 32px -18px rgb(0 0 0 / 0.6);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--text);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-kraft: var(--kraft);
+  --color-kraft-soft: var(--kraft-soft);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-on-accent: var(--on-accent);
+  --shadow-label: var(--shadow);
+}
+
+@theme {
+  --font-sans: 'Archivo Variable', ui-sans-serif, system-ui, sans-serif;
+
+  /* Type scale (Tailwind's text-sm..text-2xl cover body sizes) */
+  --text-display: clamp(2.5rem, 6vw, 4.25rem);
+  --text-display--line-height: 0.98;
+  --text-display--letter-spacing: -0.025em;
+  --text-title: clamp(2rem, 5vw, 3rem);
+  --text-title--line-height: 1.02;
+  --text-title--letter-spacing: -0.02em;
+  --text-field: 0.6875rem;
+  --text-field--line-height: 1.2;
+  --text-field--letter-spacing: 0.08em;
+
+  /* Content widths */
+  --container-prose: 40rem;
+  --container-page: 68rem;
+
+  /* Radii */
+  --radius-label: 0.75rem;
+  --radius-control: 0.5rem;
+}
+
+@utility wrap {
+  margin-inline: auto;
+  width: 100%;
+  max-width: var(--container-page);
+  padding-inline: 1rem;
+  @media (width >= 40rem) {
+    padding-inline: 1.5rem;
+  }
+}
+
+/* Condensed Archivo for headings, stacks and label fields */
+@utility font-condensed {
+  font-stretch: 78%;
+}
+
+/* Field label: only inside label components (tag, slip, stamp) */
+@utility field-label {
+  font-size: var(--text-field);
+  line-height: var(--text-field--line-height);
+  letter-spacing: var(--text-field--letter-spacing);
+  font-stretch: 78%;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Inline text link */
+@utility link {
+  color: var(--accent);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  &:hover {
+    color: var(--accent-hover);
+    text-decoration-thickness: 2px;
+  }
+}
+
+@layer base {
+  html {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    /* keep anchor targets clear of the sticky header */
+    scroll-padding-top: 5rem;
+  }
+  body {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    flex: 1;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  ::selection {
+    background: var(--kraft);
+    color: var(--text);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Long-form project content */
+.prose {
+  --tw-prose-body: var(--text);
+  --tw-prose-headings: var(--text);
+  --tw-prose-lead: var(--muted);
+  --tw-prose-links: var(--accent);
+  --tw-prose-bold: var(--text);
+  --tw-prose-counters: var(--muted);
+  --tw-prose-bullets: var(--muted);
+  --tw-prose-hr: var(--line);
+  --tw-prose-quotes: var(--text);
+  --tw-prose-quote-borders: var(--line);
+  --tw-prose-captions: var(--muted);
+  --tw-prose-code: var(--text);
+  --tw-prose-pre-code: var(--text);
+  --tw-prose-pre-bg: var(--surface);
+  --tw-prose-th-borders: var(--line);
+  --tw-prose-td-borders: var(--line);
+}
+.prose :where(h2, h3) {
+  font-stretch: 78%;
+  font-weight: 650;
+}

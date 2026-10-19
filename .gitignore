@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+.vercel/
+.DS_Store
+.claude/settings.local.json
+.playwright-mcp/
+.impeccable/

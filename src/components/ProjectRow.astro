@@ -1,0 +1,23 @@
+---
+// Compact row for a side project.
+import type { CollectionEntry } from 'astro:content';
+import StackList from './StackList.astro';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+  headingLevel?: 'h2' | 'h3';
+}
+const { project, headingLevel = 'h3' } = Astro.props;
+const Heading = headingLevel;
+const { title, summary, stack } = project.data;
+---
+
+<article class="group relative -mx-4 rounded-label px-4 py-4 transition-colors hover:bg-surface sm:-mx-5 sm:px-5">
+  <Heading class="font-condensed text-xl font-[650] text-ink">
+    <a href={`/projects/${project.id}`} class="after:absolute after:inset-0 after:rounded-label group-hover:text-accent">
+      {title}
+    </a>
+  </Heading>
+  <p class="mt-1 max-w-prose text-pretty text-ink/85">{summary}</p>
+  <div class="mt-2"><StackList items={stack} /></div>
+</article>

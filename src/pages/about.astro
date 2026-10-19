@@ -1,0 +1,103 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import Timeline from '../components/Timeline.astro';
+import ResumeLink from '../components/ResumeLink.astro';
+import portrait from '../assets/profile.jpg';
+import { site } from '../data/site';
+import { summary, experience, education, skills, publications, awards } from '../data/profile';
+---
+
+<Base title="About" description="Background, experience, education, skills and publications of Hady Gustianto.">
+  <div class="wrap pt-8 sm:pt-16">
+    <div class="flex items-center gap-5">
+      <Image
+        src={portrait}
+        alt={`Headshot of ${site.name}`}
+        widths={[80, 160]}
+        sizes="80px"
+        class="size-20 shrink-0 rounded-control border border-line object-cover"
+      />
+      <div>
+        <h1 class="font-condensed text-title font-bold text-ink">About me</h1>
+        <p class="mt-1 text-muted">{site.role}</p>
+      </div>
+    </div>
+    <div class="mt-8 flex max-w-prose flex-col gap-4 text-lg text-pretty text-ink/90">
+      {summary.map((p) => <p>{p}</p>)}
+    </div>
+    <div class="mt-8"><ResumeLink /></div>
+  </div>
+
+  <Section title="Experience" id="experience">
+    <Timeline items={experience} detailed />
+  </Section>
+
+  <Section title="Education" id="education">
+    {
+      education.map((e) => (
+        <div class="grid gap-1 sm:grid-cols-[10.5rem_1fr] sm:gap-6">
+          <p class="text-sm text-muted tabular-nums sm:pt-1">{e.period}</p>
+          <div>
+            <h3 class="font-condensed text-xl font-[650] text-ink">{e.school}</h3>
+            <p class="text-muted">
+              {e.degree}, {e.note}
+            </p>
+            <p class="text-sm text-muted">{e.place}</p>
+          </div>
+        </div>
+      ))
+    }
+  </Section>
+
+  <Section title="Skills" id="skills">
+    <dl class="flex flex-col gap-5">
+      {
+        skills.map((s) => (
+          <div class="grid gap-1 sm:grid-cols-[10.5rem_1fr] sm:gap-6">
+            <dt class="text-sm text-muted sm:pt-0.5">{s.group}</dt>
+            <dd class="max-w-prose text-ink">{s.items.join(', ')}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </Section>
+
+  <Section title="Publications" id="publications">
+    <ul class="flex flex-col gap-5">
+      {
+        publications.map((p) => (
+          <li class="grid gap-1 sm:grid-cols-[10.5rem_1fr] sm:gap-6">
+            <p class="text-sm text-muted sm:pt-0.5">{p.status}</p>
+            <p class="max-w-prose text-ink">
+              {p.href ? (
+                <a href={p.href} rel="noopener noreferrer" class="link">
+                  {p.title}
+                </a>
+              ) : (
+                p.title
+              )}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </Section>
+
+  <Section title="Awards" id="awards">
+    <ul class="flex flex-col gap-5">
+      {
+        awards.map((a) => (
+          <li class="grid gap-1 sm:grid-cols-[10.5rem_1fr] sm:gap-6">
+            <p class="text-sm text-muted sm:pt-0.5">{a.period}</p>
+            <div>
+              <p class="font-medium text-ink">{a.title}</p>
+              <p class="text-muted">{a.org}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </Section>
+</Base>

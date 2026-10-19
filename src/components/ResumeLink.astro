@@ -1,0 +1,33 @@
+---
+// Downloads the resume (never opens it in the browser). Renders nothing if the file is missing.
+import { site } from '../data/site';
+
+interface Props {
+  variant?: 'button' | 'nav' | 'text';
+}
+const { variant = 'button' } = Astro.props;
+const styles = {
+  button:
+    'min-h-11 rounded-control border border-line px-5 text-[0.9375rem] font-medium text-ink hover:border-muted hover:bg-surface',
+  nav: 'min-h-10 rounded-control border border-line px-3 text-[0.9375rem] font-medium text-ink hover:border-muted hover:bg-surface',
+  text: 'hover:text-ink',
+};
+---
+
+{
+  site.resume && (
+    <a
+      href={site.resume.href}
+      download={site.resume.filename}
+      class:list={['inline-flex items-center gap-2 transition-colors', styles[variant]]}
+    >
+      {variant !== 'text' && (
+        <svg class="size-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M10 3v10m0 0-4-4m4 4 4-4M4 16h12" />
+        </svg>
+      )}
+      <slot>Download resume</slot>
+      <span class="sr-only"> (PDF)</span>
+    </a>
+  )
+}

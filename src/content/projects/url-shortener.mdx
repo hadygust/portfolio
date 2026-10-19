@@ -1,0 +1,36 @@
+---
+title: url-shortener
+summary: A production-ready URL shortening service with Redis caching, PostgreSQL storage, JWT auth and a CI pipeline on GitHub Actions.
+kind: side
+order: 2
+stack: [Go, Gin, Redis, PostgreSQL, Docker, GitHub Actions]
+links:
+  - label: Source on GitHub
+    href: https://github.com/hadygust/url-shortener
+---
+
+## Overview
+
+A URL shortening service written in Go with Gin. Popular URLs are served straight from a Redis cache, and every URL is stored durably in PostgreSQL. The service also supports QUIC / HTTP/3 transport.
+
+## Features
+
+- Create, redirect and delete short URLs. Creating and deleting require a JWT.
+- Redis caching for hot URLs, which cuts database load.
+- Rate limiting middleware and redirect logging.
+- Database migrations with Goose.
+- Docker Compose brings up the full stack (app, PostgreSQL, Redis, Redis Commander) with one command.
+- GitHub Actions builds and tests the service on every push to `main`.
+
+## API
+
+| Method   | Endpoint          | Description                          |
+| -------- | ----------------- | ------------------------------------ |
+| `POST`   | `/url`            | Create a short URL (auth required)   |
+| `GET`    | `/:shortCode`     | Redirect to the original URL         |
+| `DELETE` | `/url/:shortCode` | Delete a short URL (auth required)   |
+| `POST`   | `/auth/login`     | Get a JWT                            |
+
+## Structure
+
+The code is organized by domain under `internal/`: auth, url, redirect logging, rate limiting and cache. Each domain is split into handler, service and repository layers.

@@ -1,0 +1,18 @@
+---
+// Wide media (diagrams, screenshots) for project pages.
+// Diagrams keep a readable minimum width and scroll sideways on small screens.
+interface Props {
+  caption?: string;
+  minWidth?: string;
+}
+const { caption, minWidth = '36rem' } = Astro.props;
+---
+
+<figure class="not-prose my-10">
+  <div class="overflow-x-auto rounded-xl border border-line bg-bg p-4 sm:p-6" tabindex="0" role="region" aria-label={caption ?? 'Figure'}>
+    <div class="w-full [&>svg]:h-auto [&>svg]:w-full" style={`min-width: ${minWidth}`}>
+      <slot />
+    </div>
+  </div>
+  {caption && <figcaption class="mt-3 text-sm text-muted">{caption}</figcaption>}
+</figure>

@@ -1,0 +1,103 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import StackList from '../../components/StackList.astro';
+import { getProjects } from '../../data/projects';
+
+export async function getStaticPaths() {
+  const { work, side } = await getProjects();
+  const all = [...work, ...side];
+  return all.map((project, i) => ({
+    params: { slug: project.id },
+    props: { project, prev: all[i - 1], next: all[i + 1] },
+  }));
+}
+
+const { project, prev, next } = Astro.props;
+const { Content } = await render(project);
+const { title, summary, kind, role, org, period, stack, links } = project.data;
+const isWork = kind === 'work';
+
+const fields = [
+  role && { label: 'Role', value: role },
+  org && { label: 'Company', value: org },
+  period && { label: 'Period', value: period },
+].filter(Boolean) as { label: string; value: string }[];
+---
+
+<Base title={title} description={summary} type="article">
+  <article class="wrap pt-6 sm:pt-12">
+    <p>
+      <a href="/projects" class="link text-sm">Back to all projects</a>
+    </p>
+
+    <header class:list={['mt-6', isWork && 'overflow-hidden rounded-label border border-line bg-surface shadow-label']}>
+      {
+        isWork && (
+          <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 bg-kraft-soft px-5 py-3 sm:px-8">
+            <p class="field-label text-ink">Professional work</p>
+            {period && <p class="field-label">{period}</p>}
+          </div>
+        )
+      }
+      <div class:list={[isWork && 'px-5 pt-6 pb-2 sm:px-8']}>
+        <h1 class="font-condensed text-title font-bold text-ink">{title}</h1>
+        <p class="mt-4 max-w-prose text-lg text-pretty text-ink">{summary}</p>
+
+        <dl class="mt-6 grid border-t border-line sm:grid-cols-2 lg:grid-cols-4">
+          {
+            fields.map((f) => (
+              <div class="border-b border-line py-3 sm:pr-5">
+                <dt class="field-label">{f.label}</dt>
+                <dd class="mt-1 text-ink">{f.value}</dd>
+              </div>
+            ))
+          }
+          <div class:list={['border-b border-line py-3', fields.length > 0 ? 'sm:col-span-2 lg:col-span-1' : 'sm:col-span-2 lg:col-span-4']}>
+            <dt class="field-label">Stack</dt>
+            <dd class="mt-1"><StackList items={stack} /></dd>
+          </div>
+        </dl>
+
+        {
+          links.length > 0 && (
+            <ul class="mt-5 mb-4 flex flex-wrap gap-x-6 gap-y-2">
+              {links.map((l) => (
+                <li>
+                  <a href={l.href} rel="noopener noreferrer" class="link font-medium">
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )
+        }
+      </div>
+    </header>
+
+    <div class="prose prose-lg mt-12 max-w-prose prose-headings:tracking-tight">
+      <Content />
+    </div>
+
+    <nav aria-label="More projects" class="mt-20 grid gap-4 border-t border-line pt-8 sm:grid-cols-2">
+      {
+        prev ? (
+          <a href={`/projects/${prev.id}`} class="group rounded-label p-4 -m-4 hover:bg-surface">
+            <span class="block text-sm text-muted">Previous project</span>
+            <span class="font-condensed text-xl font-[650] text-ink group-hover:text-accent">{prev.data.title}</span>
+          </a>
+        ) : (
+          <span />
+        )
+      }
+      {
+        next && (
+          <a href={`/projects/${next.id}`} class="group rounded-label p-4 -m-4 hover:bg-surface sm:text-right">
+            <span class="block text-sm text-muted">Next project</span>
+            <span class="font-condensed text-xl font-[650] text-ink group-hover:text-accent">{next.data.title}</span>
+          </a>
+        )
+      }
+    </nav>
+  </article>
+</Base>

@@ -1,0 +1,23 @@
+---
+// A titled block. Default: heading in a narrow left column on wide screens.
+// `stacked` puts the heading above full-width content (for wide blocks like work slips).
+interface Props {
+  title: string;
+  id: string;
+  stacked?: boolean;
+  intro?: string;
+}
+const { title, id, stacked = false, intro } = Astro.props;
+---
+
+<section
+  id={id}
+  aria-labelledby={`${id}-heading`}
+  class:list={['wrap grid gap-6 py-14 sm:py-20', !stacked && 'md:grid-cols-[13rem_1fr] md:gap-10']}
+>
+  <div>
+    <h2 id={`${id}-heading`} class="font-condensed text-2xl font-[650] text-ink">{title}</h2>
+    {intro && <p class="mt-2 max-w-prose text-muted">{intro}</p>}
+  </div>
+  <div class="min-w-0"><slot /></div>
+</section>

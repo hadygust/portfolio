@@ -1,0 +1,12 @@
+---
+import Section from '../Section.astro';
+import Timeline from '../Timeline.astro';
+import { experience } from '../../data/profile';
+---
+
+<Section title="Experience" id="experience">
+  <Timeline items={experience} />
+  <p class="mt-8">
+    <a href="/about#experience" class="link">Full experience details</a>
+  </p>
+</Section>

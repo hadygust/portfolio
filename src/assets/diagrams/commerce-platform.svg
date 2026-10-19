@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 396" role="img" aria-labelledby="dg-cp-title dg-cp-desc">
+  <title id="dg-cp-title">Data flow through the multi-channel commerce backend</title>
+  <desc id="dg-cp-desc">Vendor product, stock, image and fulfillment data enters through one integration service. It feeds a shared catalog, inventory, customer and order backend built as Go microservices. Product search runs on Typesense and product images are stored in MinIO object storage. The backend serves three storefronts: Matahari.com, SUKO and MaxMurah.</desc>
+  <style>
+    .dg-box { fill: var(--surface); stroke: var(--line); stroke-width: 1.5; }
+    .dg-key { fill: var(--kraft-soft); stroke: var(--accent); stroke-width: 1.5; }
+    .dg-t { fill: var(--text); font: 600 15px 'Archivo Variable', system-ui, sans-serif; }
+    .dg-s { fill: var(--muted); font: 400 12.5px 'Archivo Variable', system-ui, sans-serif; }
+    .dg-a { stroke: var(--muted); stroke-width: 1.5; fill: none; marker-end: url(#dg-cp-arrow); }
+  </style>
+  <defs>
+    <marker id="dg-cp-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" style="fill: var(--muted)" />
+    </marker>
+  </defs>
+
+  <rect class="dg-box" x="200" y="8" width="240" height="56" rx="8" />
+  <text class="dg-t" x="320" y="32" text-anchor="middle">Vendors</text>
+  <text class="dg-s" x="320" y="51" text-anchor="middle">products, stock, images, fulfillment</text>
+  <path class="dg-a" d="M320 64v30" />
+
+  <rect class="dg-key" x="200" y="100" width="240" height="56" rx="8" />
+  <text class="dg-t" x="320" y="124" text-anchor="middle">Integration service</text>
+  <text class="dg-s" x="320" y="143" text-anchor="middle">one entry point for all vendor data</text>
+  <path class="dg-a" d="M320 156v30" />
+
+  <rect class="dg-box" x="170" y="192" width="300" height="72" rx="8" />
+  <text class="dg-t" x="320" y="218" text-anchor="middle">Shared commerce backend</text>
+  <text class="dg-s" x="320" y="237" text-anchor="middle">catalog, inventory, customers, orders</text>
+  <text class="dg-s" x="320" y="254" text-anchor="middle">Go microservices, gRPC + REST</text>
+
+  <rect class="dg-box" x="4" y="200" width="140" height="56" rx="8" />
+  <text class="dg-t" x="74" y="224" text-anchor="middle">Product search</text>
+  <text class="dg-s" x="74" y="243" text-anchor="middle">Typesense, facets</text>
+  <path class="dg-a" d="M170 228 H150" />
+
+  <rect class="dg-box" x="496" y="200" width="140" height="56" rx="8" />
+  <text class="dg-t" x="566" y="224" text-anchor="middle">Product images</text>
+  <text class="dg-s" x="566" y="243" text-anchor="middle">MinIO storage</text>
+  <path class="dg-a" d="M470 228 H490" />
+
+  <path class="dg-a" d="M320 264 V300 H120 V334" />
+  <path class="dg-a" d="M320 264 V334" />
+  <path class="dg-a" d="M320 300 H520 V334" />
+
+  <rect class="dg-box" x="40" y="340" width="160" height="50" rx="8" />
+  <text class="dg-t" x="120" y="370" text-anchor="middle">Matahari.com</text>
+  <rect class="dg-box" x="240" y="340" width="160" height="50" rx="8" />
+  <text class="dg-t" x="320" y="370" text-anchor="middle">SUKO</text>
+  <rect class="dg-box" x="440" y="340" width="160" height="50" rx="8" />
+  <text class="dg-t" x="520" y="370" text-anchor="middle">MaxMurah</text>
+</svg>

@@ -1,0 +1,43 @@
+---
+import Base from '../layouts/Base.astro';
+import LinkButton from '../components/LinkButton.astro';
+---
+
+<Base title="Page not found" description="This page does not exist.">
+  <section aria-labelledby="nf-heading" class="wrap grid gap-12 pt-10 pb-10 sm:pt-20 md:grid-cols-[1fr_21rem] md:items-center md:gap-16">
+    <div>
+      <h1 id="nf-heading" class="font-condensed text-display font-bold text-ink">Page not found</h1>
+      <p class="mt-6 max-w-[34rem] text-xl text-pretty text-ink">
+        Nothing lives at this address. The link may have a typo, or the page may have moved.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <LinkButton href="/" variant="primary">Go to the homepage</LinkButton>
+        <LinkButton href="/projects">Browse projects</LinkButton>
+      </div>
+    </div>
+
+    <div aria-hidden="true" class="relative rounded-label border border-line bg-surface p-5 shadow-label">
+      <span class="absolute top-4 right-4 size-3 rounded-full border border-line bg-kraft"></span>
+      <p class="field-label">Delivery status</p>
+      <dl class="mt-4 border-t border-line">
+        <div class="grid grid-cols-[5.5rem_1fr] gap-3 border-b border-line py-2.5">
+          <dt class="field-label pt-0.5">Address</dt>
+          <dd class="min-w-0 truncate text-sm text-ink" data-requested-path>this page</dd>
+        </div>
+        <div class="grid grid-cols-[5.5rem_1fr] gap-3 border-b border-line py-2.5">
+          <dt class="field-label pt-0.5">Code</dt>
+          <dd class="text-sm text-ink">404</dd>
+        </div>
+      </dl>
+      <p
+        class="font-condensed mx-auto mt-6 mb-2 w-fit -rotate-6 rounded-control border-2 border-accent px-4 py-1.5 text-2xl font-bold tracking-[0.06em] text-accent uppercase"
+      >
+        Not delivered
+      </p>
+    </div>
+  </section>
+</Base>
+
+<script is:inline>
+  document.querySelectorAll('[data-requested-path]').forEach((el) => (el.textContent = location.pathname));
+</script>

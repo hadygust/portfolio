@@ -1,0 +1,45 @@
+---
+title: Multi-channel commerce backend
+summary: One integration service and a shared catalog behind Matahari.com, SUKO and MaxMurah, replacing separate per-channel vendor integrations.
+kind: work
+order: 1
+role: Senior IT Developer
+org: MDS Retailing (Matahari)
+period: Jul 2026 – Present
+stack: [Go, gRPC, REST, Typesense, MinIO]
+highlights:
+  - Designed and built from scratch the integration service through which all vendor product, stock, image and fulfillment data enters the platform.
+  - Top contributor to 4 of the 7 Go microservices that run catalog, inventory, customer accounts and orders.
+  - Shipped storefront product search with filters and facets on Typesense, plus a secure image pipeline on MinIO.
+  - Built a bulk stock sync designed for 60,000 SKUs every 5 minutes.
+---
+
+import Figure from '../../components/Figure.astro';
+import Diagram from '../../assets/diagrams/commerce-platform.svg';
+
+## Overview
+
+Matahari runs several online storefronts: Matahari.com, SUKO and MaxMurah. I work on the Go microservices backend (gRPC + REST) that centralizes their catalog, inventory, customer accounts and orders. I'm the top contributor to 4 of its 7 services.
+
+## The problem
+
+Each channel used to have its own integration with vendors. Every new channel or vendor change meant more duplicated work, and product data was spread across separate pipelines.
+
+## What I built
+
+- **Integration service, from scratch.** All vendor product, stock, image and fulfillment data now enters the platform through this one service. It replaces the separate per-channel integrations with one shared catalog.
+- **Storefront product search** with filters and facets, built on Typesense.
+- **A secure product image pipeline** on object storage (MinIO).
+- **A bulk stock sync** designed to handle 60,000 SKUs every 5 minutes.
+- **Customer accounts integrated with the group loyalty CRM:** OTP activation, password reset and loyalty profiles.
+- **A test-first restructure of the user service**, which I led, with enforced module boundaries.
+
+## Architecture
+
+<Figure caption="Simplified data flow. Internal service names and infrastructure details are left out.">
+  <Diagram />
+</Figure>
+
+## Outcome
+
+Vendor data now has a single way in, and every storefront reads from the same catalog instead of keeping its own copy of each integration.

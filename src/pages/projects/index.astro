@@ -1,0 +1,48 @@
+---
+import Base from '../../layouts/Base.astro';
+import Section from '../../components/Section.astro';
+import WorkSlip from '../../components/WorkSlip.astro';
+import ProjectRow from '../../components/ProjectRow.astro';
+import { getProjects } from '../../data/projects';
+
+const { work, side } = await getProjects();
+---
+
+<Base title="Projects" description="Professional case studies and side projects by Hady Gustianto.">
+  <div class="wrap pt-8 sm:pt-16">
+    <h1 class="font-condensed text-title font-bold text-ink">Projects</h1>
+    <p class="mt-4 max-w-prose text-lg text-muted">
+      Production systems I built for real businesses come first. Side projects show how I explore ideas on my own time.
+    </p>
+  </div>
+
+  {
+    work.length === 0 && side.length === 0 && (
+      <p class="wrap py-16 text-muted">No projects are published yet. Check back soon, or download the resume for the full picture.</p>
+    )
+  }
+
+  {
+    work.length > 0 && (
+      <Section title="Professional work" id="work" stacked>
+        <div class="flex flex-col gap-8">
+          {work.map((project) => (
+            <WorkSlip project={project} />
+          ))}
+        </div>
+      </Section>
+    )
+  }
+
+  {
+    side.length > 0 && (
+      <Section title="Side projects" id="side-projects">
+        <div class="flex flex-col gap-1">
+          {side.map((project) => (
+            <ProjectRow project={project} />
+          ))}
+        </div>
+      </Section>
+    )
+  }
+</Base>

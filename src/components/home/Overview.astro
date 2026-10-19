@@ -1,0 +1,13 @@
+---
+import Section from '../Section.astro';
+import { summary } from '../../data/profile';
+---
+
+<Section title="About" id="about">
+  <div class="flex max-w-prose flex-col gap-4 text-lg text-pretty text-ink/90">
+    {summary.map((p) => <p>{p}</p>)}
+  </div>
+  <p class="mt-6">
+    <a href="/about" class="link">More about my background</a>
+  </p>
+</Section>

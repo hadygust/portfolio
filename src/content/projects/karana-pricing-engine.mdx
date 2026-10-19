@@ -1,0 +1,40 @@
+---
+title: Hospitality pricing and revenue engine
+summary: End-to-end ownership of the pricing and revenue module of a multi-property hospitality platform, from data model to UI.
+kind: work
+order: 2
+role: Software Engineer (Freelance)
+org: Karana OS
+period: May 2026 – Present
+stack: [Next.js, TypeScript, Supabase, PostgreSQL, Edge Functions, Claude Code]
+highlights:
+  - Built every feature with Claude Code, using spec-driven generation and multi-agent review and testing before shipping.
+  - Led the architecture redesign, restructured 5 core tables and migrated the database.
+  - Wrote the pricing computation engine in TypeScript on Supabase Edge Functions.
+  - Same-day turnaround on client feedback, with 58+ revisions across 5 review cycles in 6 weeks.
+---
+
+import Figure from '../../components/Figure.astro';
+import Diagram from '../../assets/diagrams/pricing-engine.svg';
+
+## Overview
+
+Karana OS is a hospitality platform for businesses that run several properties. As a freelancer, I own its pricing and revenue module end to end: the data model, the computation engine and the UI.
+
+## What I did
+
+- **Led a major architecture redesign.** I restructured the module around 5 core tables and migrated the database to the new design.
+- **Wrote the pricing computation engine** in TypeScript, running on Supabase Edge Functions on top of Supabase PostgreSQL.
+- **Built the UI** in Next.js and TypeScript.
+
+## How I work on it
+
+I build every feature with Claude Code. I generate code from specs, then run multi-agent review and testing workflows. Nothing ships until it passes automated reviews and tests.
+
+This kept turnaround fast. I handled client feedback the same day it came in, for 58+ revisions across 5 review cycles in 6 weeks.
+
+## Architecture
+
+<Figure caption="Simplified architecture. Table names and business rules are left out.">
+  <Diagram />
+</Figure>

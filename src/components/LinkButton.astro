@@ -1,0 +1,20 @@
+---
+interface Props {
+  href: string;
+  variant?: 'primary' | 'secondary';
+  external?: boolean;
+}
+const { href, variant = 'secondary', external = false } = Astro.props;
+const styles = {
+  primary: 'bg-accent text-on-accent hover:bg-accent-hover',
+  secondary: 'border border-line text-ink hover:border-muted hover:bg-surface',
+};
+---
+
+<a
+  href={href}
+  rel={external ? 'noopener noreferrer' : undefined}
+  class:list={['inline-flex min-h-11 items-center rounded-control px-5 text-[0.9375rem] font-medium transition-colors', styles[variant]]}
+>
+  <slot />
+</a>

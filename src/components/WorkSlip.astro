@@ -1,0 +1,69 @@
+---
+// Packing-slip block for a professional (work) case study.
+import type { CollectionEntry } from 'astro:content';
+import StackList from './StackList.astro';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+  headingLevel?: 'h2' | 'h3';
+}
+const { project, headingLevel = 'h3' } = Astro.props;
+const Heading = headingLevel;
+const { title, summary, stack, org, role, period, highlights } = project.data;
+const href = `/projects/${project.id}`;
+
+const fields = [
+  role && { label: 'Role', value: role },
+  org && { label: 'Company', value: org },
+  period && { label: 'Period', value: period },
+].filter(Boolean) as { label: string; value: string }[];
+---
+
+<article class="overflow-hidden rounded-label border border-line bg-surface shadow-label">
+  <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 bg-kraft-soft px-5 py-3 sm:px-7">
+    <p class="field-label text-ink">Professional work</p>
+    {period && <p class="field-label">{period}</p>}
+  </div>
+
+  <div class="px-5 pt-6 pb-6 sm:px-7">
+    <Heading class="font-condensed text-title font-[650] text-ink">
+      <a href={href} class="hover:text-accent">{title}</a>
+    </Heading>
+    <p class="mt-4 max-w-prose text-lg text-pretty text-ink">{summary}</p>
+
+    <dl class="mt-6 grid border-t border-line sm:grid-cols-2 lg:grid-cols-4">
+      {
+        fields.map((f) => (
+          <div class="border-b border-line py-3 sm:pr-5">
+            <dt class="field-label">{f.label}</dt>
+            <dd class="mt-1 text-ink">{f.value}</dd>
+          </div>
+        ))
+      }
+      <div class="border-b border-line py-3">
+        <dt class="field-label">Stack</dt>
+        <dd class="mt-1"><StackList items={stack} /></dd>
+      </div>
+    </dl>
+
+    {
+      highlights.length > 0 && (
+        <ul aria-label="Highlights" class="mt-2">
+          {highlights.map((h) => (
+            <li class="max-w-[48rem] border-b border-line py-3 text-pretty text-ink/90 last:border-b-0">{h}</li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+
+  <a
+    href={href}
+    class="group flex items-center justify-between gap-4 border-t border-dashed border-line px-5 py-4 font-medium text-accent transition-colors hover:bg-kraft-soft sm:px-7"
+  >
+    <span>Read the case study<span class="sr-only">: {title}</span></span>
+    <svg class="size-5 transition-transform group-hover:translate-x-1" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M4 10h12m0 0-4-4m4 4-4 4" />
+    </svg>
+  </a>
+</article>
