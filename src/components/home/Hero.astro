@@ -8,21 +8,23 @@ import { site } from '../../data/site';
 <section aria-labelledby="hero-heading" class="wrap pt-8 pb-14 sm:pt-16 sm:pb-20">
   <div class="grid gap-12 md:grid-cols-[1fr_21rem] md:items-center md:gap-16">
     <div>
-      <h1 id="hero-heading" class="font-condensed text-display font-bold text-ink">{site.name}</h1>
-      <p class="font-condensed mt-3 text-xl text-muted">Senior IT Developer at MDS Retailing (Matahari)</p>
-      <p class="mt-6 max-w-[34rem] text-xl text-pretty text-ink">
+      <h1 id="hero-heading" data-reveal class="font-condensed text-display font-bold text-ink">{site.name}</h1>
+      <p data-reveal style="--i: 1" class="font-condensed mt-3 text-xl text-muted">
+        Senior IT Developer at MDS Retailing (Matahari)
+      </p>
+      <p data-reveal style="--i: 2" class="mt-6 max-w-[34rem] text-xl text-pretty text-ink">
         I design and build integration-heavy systems end to end, from Go microservices to Next.js products.
       </p>
-      <p class="mt-4 max-w-[34rem] text-pretty text-muted">
+      <p data-reveal style="--i: 3" class="mt-4 max-w-[34rem] text-pretty text-muted">
         Right now I’m building the commerce backend behind Matahari.com, SUKO and MaxMurah, and the pricing engine of a
         hospitality SaaS. I work daily in AI-assisted development workflows.
       </p>
-      <div class="mt-8 flex flex-wrap gap-3">
+      <div data-reveal style="--i: 4" class="mt-8 flex flex-wrap gap-3">
         <LinkButton href="#work" variant="primary">See my work</LinkButton>
         <ResumeLink />
         <LinkButton href={`mailto:${site.email}`}>Email me</LinkButton>
       </div>
     </div>
-    <IdTag />
+    <div data-reveal style="--i: 3"><IdTag /></div>
   </div>
 </section>

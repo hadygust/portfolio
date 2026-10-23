@@ -11,8 +11,8 @@ const { items, detailed = false } = Astro.props;
 
 <ol class="flex flex-col gap-8">
   {
-    items.map((r) => (
-      <li class="grid gap-1 sm:grid-cols-[10.5rem_1fr] sm:gap-6">
+    items.map((r, i) => (
+      <li data-reveal style={`--i: ${i}`} class="grid gap-1 sm:grid-cols-[10.5rem_1fr] sm:gap-6">
         <p class="text-sm tabular-nums text-muted sm:pt-0.5">{r.period}</p>
         <div>
           <h3 class="font-condensed text-lg font-[650] text-ink">{r.title}</h3>

@@ -57,7 +57,11 @@ Every text pairing is AA or better. The tightest are muted on kraft-soft (4.84:1
   - Below the `sm` breakpoint, the nav Resume button is hidden; the hero, About page and footer still offer the download.
 
 ## Motion
-No entrance animations. The only transitions are color changes on hover and the nav-name reveal. Reduced motion is respected globally.
+- **Entrance reveal:** content blocks fade up 1rem over 600ms the first time they enter view. Siblings are staggered by 70ms (capped at 6 steps). Mark an element with `data-reveal` and optionally `style="--i: n"`. The reveal is skipped entirely with reduced motion or without JS, so content is never hidden.
+  - Animates: hero lines, buttons and ID tag (on load), section headings, each work slip as one unit, side-project rows, timeline roles, About and Contact blocks, page intros, the case-study header, and About page list items.
+  - Stays still: header and footer, case-study prose and prev/next nav, anything inside a slip or tag (fields, stack, buttons, links), and the 404 stamp.
+- **Work slip snap:** on the homepage, work slips snap to the center of the viewport below the header (`scroll-snap-type: y proximity`, `snap-center snap-always`). The rest of the page scrolls freely.
+- **Other transitions:** color changes on hover and the nav-name reveal. Reduced motion is respected globally.
 
 ## Don'ts
 - No uppercase or letter-spaced labels outside label components.

@@ -47,6 +47,10 @@ const ogImage = new URL(image, Astro.site);
         const t = localStorage.getItem('theme');
         if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
       } catch {}
+      // Enable entrance reveals only when they can run and motion is welcome.
+      if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('reveal');
+      }
     </script>
   </head>
   <body>
@@ -60,5 +64,22 @@ const ogImage = new URL(image, Astro.site);
       <slot />
     </main>
     <Footer />
+
+    <script>
+      // Mark [data-reveal] elements as revealed the first time they enter view.
+      if (document.documentElement.classList.contains('reveal')) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (!entry.isIntersecting) continue;
+              entry.target.setAttribute('data-revealed', '');
+              observer.unobserve(entry.target);
+            }
+          },
+          { rootMargin: '0px 0px -10% 0px' },
+        );
+        document.querySelectorAll('[data-reveal]').forEach((el) => observer.observe(el));
+      }
+    </script>
   </body>
 </html>

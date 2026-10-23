@@ -11,7 +11,7 @@ import { summary, experience, education, skills, publications, awards } from '..
 
 <Base title="About" description="Background, experience, education, skills and publications of Hady Gustianto.">
   <div class="wrap pt-8 sm:pt-16">
-    <div class="flex items-center gap-5">
+    <div data-reveal class="flex items-center gap-5">
       <Image
         src={portrait}
         alt={`Headshot of ${site.name}`}
@@ -24,10 +24,10 @@ import { summary, experience, education, skills, publications, awards } from '..
         <p class="mt-1 text-muted">{site.role}</p>
       </div>
     </div>
-    <div class="mt-8 flex max-w-prose flex-col gap-4 text-lg text-pretty text-ink/90">
+    <div data-reveal style="--i: 1" class="mt-8 flex max-w-prose flex-col gap-4 text-lg text-pretty text-ink/90">
       {summary.map((p) => <p>{p}</p>)}
     </div>
-    <div class="mt-8"><ResumeLink /></div>
+    <div data-reveal style="--i: 2" class="mt-8"><ResumeLink /></div>
   </div>
 
   <Section title="Experience" id="experience">
@@ -36,8 +36,8 @@ import { summary, experience, education, skills, publications, awards } from '..
 
   <Section title="Education" id="education">
     {
-      education.map((e) => (
-        <div class="grid gap-1 sm:grid-cols-[10.5rem_1fr] sm:gap-6">
+      education.map((e, i) => (
+        <div data-reveal style={`--i: ${i}`} class="grid gap-1 sm:grid-cols-[10.5rem_1fr] sm:gap-6">
           <p class="text-sm text-muted tabular-nums sm:pt-1">{e.period}</p>
           <div>
             <h3 class="font-condensed text-xl font-[650] text-ink">{e.school}</h3>
@@ -54,8 +54,8 @@ import { summary, experience, education, skills, publications, awards } from '..
   <Section title="Skills" id="skills">
     <dl class="flex flex-col gap-5">
       {
-        skills.map((s) => (
-          <div class="grid gap-1 sm:grid-cols-[10.5rem_1fr] sm:gap-6">
+        skills.map((s, i) => (
+          <div data-reveal style={`--i: ${i}`} class="grid gap-1 sm:grid-cols-[10.5rem_1fr] sm:gap-6">
             <dt class="text-sm text-muted sm:pt-0.5">{s.group}</dt>
             <dd class="max-w-prose text-ink">{s.items.join(', ')}</dd>
           </div>
@@ -67,8 +67,8 @@ import { summary, experience, education, skills, publications, awards } from '..
   <Section title="Publications" id="publications">
     <ul class="flex flex-col gap-5">
       {
-        publications.map((p) => (
-          <li class="grid gap-1 sm:grid-cols-[10.5rem_1fr] sm:gap-6">
+        publications.map((p, i) => (
+          <li data-reveal style={`--i: ${i}`} class="grid gap-1 sm:grid-cols-[10.5rem_1fr] sm:gap-6">
             <p class="text-sm text-muted sm:pt-0.5">{p.status}</p>
             <p class="max-w-prose text-ink">
               {p.href ? (
@@ -88,8 +88,8 @@ import { summary, experience, education, skills, publications, awards } from '..
   <Section title="Awards" id="awards">
     <ul class="flex flex-col gap-5">
       {
-        awards.map((a) => (
-          <li class="grid gap-1 sm:grid-cols-[10.5rem_1fr] sm:gap-6">
+        awards.map((a, i) => (
+          <li data-reveal style={`--i: ${i}`} class="grid gap-1 sm:grid-cols-[10.5rem_1fr] sm:gap-6">
             <p class="text-sm text-muted sm:pt-0.5">{a.period}</p>
             <div>
               <p class="font-medium text-ink">{a.title}</p>

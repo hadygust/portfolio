@@ -9,7 +9,7 @@ const { work, side } = await getProjects();
 ---
 
 <Base title="Projects" description="Professional case studies and side projects by Hady Gustianto.">
-  <div class="wrap pt-8 sm:pt-16">
+  <div data-reveal class="wrap pt-8 sm:pt-16">
     <h1 class="font-condensed text-title font-bold text-ink">Projects</h1>
     <p class="mt-4 max-w-prose text-lg text-muted">
       Production systems I built for real businesses come first. Side projects show how I explore ideas on my own time.
@@ -38,8 +38,8 @@ const { work, side } = await getProjects();
     side.length > 0 && (
       <Section title="Side projects" id="side-projects">
         <div class="flex flex-col gap-1">
-          {side.map((project) => (
-            <ProjectRow project={project} />
+          {side.map((project, i) => (
+            <ProjectRow project={project} index={i} />
           ))}
         </div>
       </Section>

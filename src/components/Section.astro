@@ -15,7 +15,7 @@ const { title, id, stacked = false, intro } = Astro.props;
   aria-labelledby={`${id}-heading`}
   class:list={['wrap grid gap-6 py-14 sm:py-20', !stacked && 'md:grid-cols-[13rem_1fr] md:gap-10']}
 >
-  <div>
+  <div data-reveal>
     <h2 id={`${id}-heading`} class="font-condensed text-2xl font-[650] text-ink">{title}</h2>
     {intro && <p class="mt-2 max-w-prose text-muted">{intro}</p>}
   </div>
