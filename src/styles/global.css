@@ -140,10 +140,6 @@
     /* keep anchor targets clear of the sticky header */
     scroll-padding-top: 5rem;
   }
-  /* Homepage work slips snap to the center of the viewport (see WorkSlip `snap`). */
-  html:has([data-snap]) {
-    scroll-snap-type: y proximity;
-  }
   body {
     min-height: 100dvh;
     display: flex;

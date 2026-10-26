@@ -6,10 +6,8 @@ import StackList from './StackList.astro';
 interface Props {
   project: CollectionEntry<'projects'>;
   headingLevel?: 'h2' | 'h3';
-  /** Snap this slip to the viewport center while scrolling (homepage). */
-  snap?: boolean;
 }
-const { project, headingLevel = 'h3', snap = false } = Astro.props;
+const { project, headingLevel = 'h3' } = Astro.props;
 const Heading = headingLevel;
 const { title, summary, stack, org, role, period, highlights } = project.data;
 const href = `/projects/${project.id}`;
@@ -21,11 +19,7 @@ const fields = [
 ].filter(Boolean) as { label: string; value: string }[];
 ---
 
-<article
-  data-reveal
-  data-snap={snap ? '' : undefined}
-  class:list={['overflow-hidden rounded-label border border-line bg-surface shadow-label', snap && 'snap-center snap-always']}
->
+<article data-reveal class="overflow-hidden rounded-label border border-line bg-surface shadow-label">
   <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 bg-kraft-soft px-5 py-3 sm:px-7">
     <p class="field-label text-ink">Professional work</p>
     {period && <p class="field-label">{period}</p>}
