@@ -6,10 +6,43 @@ import SideProjects from '../components/home/SideProjects.astro';
 import Overview from '../components/home/Overview.astro';
 import Experience from '../components/home/Experience.astro';
 import Contact from '../components/home/Contact.astro';
+import { site } from '../data/site';
+
+// Structured data so search engines tie the name variants, handles and profiles to one person and site.
+const siteUrl = new URL('/', Astro.site).href;
+const personId = `${siteUrl}#person`;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': personId,
+      name: site.name,
+      alternateName: site.alternateNames,
+      jobTitle: site.role,
+      description: site.description,
+      url: siteUrl,
+      image: new URL('/icon-512.png', Astro.site).href,
+      email: `mailto:${site.email}`,
+      sameAs: site.socials.map((s) => s.href),
+      knowsAbout: ['Go', 'TypeScript', 'Next.js', 'Backend engineering', 'Microservices', 'System integration'],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}#website`,
+      url: siteUrl,
+      name: site.name,
+      alternateName: ['hadygust', 'Hady Gustianto Portfolio'],
+      inLanguage: 'en',
+      publisher: { '@id': personId },
+    },
+  ],
+};
 ---
 
 <!-- Sections are independent: reorder or remove lines to change the homepage. -->
 <Base>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <Hero />
   <Work />
   <SideProjects />

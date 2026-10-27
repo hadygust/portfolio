@@ -9,6 +9,8 @@ export const site = {
   role: 'Backend-leaning full-stack engineer',
   description:
     'Hady Gustianto is a backend-leaning full-stack engineer who designs and builds integration-heavy systems end to end, from Go microservices to Next.js products.',
+  /** Other ways people search for the name; used in structured data. */
+  alternateNames: ['Hady', 'hadygust', 'Hady Gust', 'Hady Gustianto Software Engineer'],
   email: 'hadygust2883@gmail.com',
   phone: { display: '+62 878-8415-6045', href: 'tel:+6287884156045' },
   socials: [
