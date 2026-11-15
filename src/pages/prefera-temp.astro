@@ -1,0 +1,1302 @@
+---
+// Prefera Design Studio - Showcase Mockup
+// Route: /prefera-temp
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prefera Design Studio — Interior & Architectural Consultant</title>
+  <meta name="description" content="Jakarta-based interior & architectural consultancy led by Richard Saimin. Designing bespoke residential sanctuaries, retail spaces, and commercial environments." />
+  <link rel="stylesheet" href="/prefera-temp/css/style.css" />
+  <!-- Font Awesome for clean modern icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Top Studio Location Bar -->
+  <div class="top-notice-bar">
+    <span>Interior Architecture & Spatial Design • Jakarta Utara • Est. 2016</span>
+  </div>
+
+  <!-- Sticky Architectural Header -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <!-- Brand Logo (Fixed Outlined 'r' with Crisp Thin Stroke) -->
+      <a href="#hero" class="brand-logo" aria-label="Prefera Design Studio Home">
+        <span class="logo-prefera">p<span class="logo-r">r</span>efera</span>
+        <span class="logo-subtitle">design studio</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="#projects" class="nav-link">Selected Works</a></li>
+          <li><a href="#about" class="nav-link">Philosophy</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#process" class="nav-link">Process</a></li>
+          <li><a href="#contact" class="nav-link">Contact & Location</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav CTA with Direct WhatsApp link -->
+      <div class="nav-actions">
+        <a href="https://wa.me/6287884156045?text=Hello%20Prefera%20Design%20Studio,%20I%20would%20like%20to%20consult%20about%20a%20project." 
+           target="_blank" 
+           rel="noopener" 
+           class="btn btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+        </a>
+        <button class="mobile-toggle" aria-label="Open Mobile Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <!-- Dynamic Background Image Carousel (from Scraped Assets) -->
+    <div class="hero-bg-slider">
+      <div class="hero-slide active" style="background-image: url('/prefera-temp/assets/projects/post_002_20260610_063549_DZZUDmMgQek/image_01.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('/prefera-temp/assets/projects/post_007_20260414_043654_DXGVIy3AQGL/image_01.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('/prefera-temp/assets/projects/post_001_20260724_101401_DbLAANngWfz/image_01.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('/prefera-temp/assets/projects/post_019_20250614_065134_DK3y5JDTjp_/image_01.jpg');"></div>
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+      <span class="hero-tagline">Interior & Architectural Consultancy</span>
+      <h1 class="hero-title">
+        Harmonizing <em>Space</em>, Texture & Natural <em>Light</em>.
+      </h1>
+      <p class="hero-description">
+        Prefera Design Studio transforms residential architectures and commercial spaces into refined, sensorial environments. Led by Richard Saimin, we craft spaces tailored to modern rituals and enduring beauty.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-gold">
+          Explore Portfolio <i class="fa-solid fa-arrow-right-long"></i>
+        </a>
+        <a href="https://wa.me/6287884156045?text=Hello%20Prefera%20Design%20Studio,%20I%20would%20like%20to%20consult%20about%20a%20project." 
+           target="_blank" 
+           rel="noopener" 
+           class="btn btn-outline">
+          <i class="fa-brands fa-whatsapp"></i> Quick Consultation
+        </a>
+      </div>
+
+      <!-- Studio Stats -->
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">2016</div>
+          <div class="stat-label">Studio Founded</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100+</div>
+          <div class="stat-label">Spaces Realized</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">Bespoke</div>
+          <div class="stat-label">Architectural Detail</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selected Works / Portfolio Grid (Max 12 on All Works, >= 6 per category) -->
+  <section id="projects" class="works-section">
+    <div class="container">
+      <div class="works-header">
+        <div>
+          <span class="section-label">Selected Portfolio</span>
+          <h2 class="section-heading">Curated Works & Spatial Realizations</h2>
+          <p class="section-desc" style="margin-bottom: 0;">Explore completed projects across Greater Jakarta, ranging from high-end residences to boutique retail environments and bespoke joinery.</p>
+        </div>
+
+        <!-- Filter Buttons with Entry Counts -->
+        <div class="filter-nav">
+          <button class="filter-btn active" data-filter="all">
+            All Works <span class="count-pill">12 Featured</span>
+          </button>
+          <button class="filter-btn" data-filter="Residential">
+            Residential <span class="count-pill">8</span>
+          </button>
+          <button class="filter-btn" data-filter="Commercial & Retail">
+            Commercial & Retail <span class="count-pill">8</span>
+          </button>
+          <button class="filter-btn" data-filter="Architecture & Facade">
+            Facade & Architecture <span class="count-pill">7</span>
+          </button>
+          <button class="filter-btn" data-filter="Bespoke Space">
+            Bespoke Space <span class="count-pill">7</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Project Cards Grid (30 Total Curated Real Projects) -->
+      <div class="portfolio-grid" id="portfolioGrid">
+        <!-- Project: BS House , Cosmo Park -->
+        <article class="project-card" 
+                 data-project-id="DZZUDmMgQek" 
+                 data-category="Residential" 
+                 data-featured="true"
+                 data-builder="@palaisconstruction" 
+                 data-photo="@williamsaimin"
+                 style="display: flex; opacity: 1;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_002_20260610_063549_DZZUDmMgQek/image_01.jpg" alt="BS House , Cosmo Park" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Residential</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 6 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">BS House , Cosmo Park</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed , 2026</span>
+              <span><i class="fa-solid fa-hammer"></i> @palaisconstruction</span>
+            </div>
+            <p class="project-excerpt">Project : BS House , Cosmo Park — Status : Completed , 2026</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: DA House , New Jasmine -->
+        <article class="project-card" 
+                 data-project-id="DXGVIy3AQGL" 
+                 data-category="Residential" 
+                 data-featured="true"
+                 data-builder="@palaisconstruction" 
+                 data-photo="@leowardistudio"
+                 style="display: flex; opacity: 1;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_007_20260414_043654_DXGVIy3AQGL/image_01.jpg" alt="DA House , New Jasmine" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Residential</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 4 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">DA House , New Jasmine</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed , 2025</span>
+              <span><i class="fa-solid fa-hammer"></i> @palaisconstruction</span>
+            </div>
+            <p class="project-excerpt">Project : DA House , New Jasmine — Status : Completed , 2025</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: YJ House , Sunter -->
+        <article class="project-card" 
+                 data-project-id="DK3y5JDTjp_" 
+                 data-category="Residential" 
+                 data-featured="true"
+                 data-builder="@sperointerior" 
+                 data-photo="Prefera Archive"
+                 style="display: flex; opacity: 1;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_019_20250614_065134_DK3y5JDTjp_/image_01.jpg" alt="YJ House , Sunter" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Residential</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 6 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">YJ House , Sunter</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed , 2025</span>
+              <span><i class="fa-solid fa-hammer"></i> @sperointerior</span>
+            </div>
+            <p class="project-excerpt">Project : YJ House , Sunter — Status : Completed , 2025</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: T House , Golf Island PIK -->
+        <article class="project-card" 
+                 data-project-id="DDtMU2YTqtS" 
+                 data-category="Residential" 
+                 data-featured="false"
+                 data-builder="@palaisconstruction" 
+                 data-photo="@jochristianpresents"
+                 style="display: none; opacity: 0;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_023_20241218_042224_DDtMU2YTqtS/image_01.jpg" alt="T House , Golf Island PIK" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Residential</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 6 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">T House , Golf Island PIK</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed , 2024</span>
+              <span><i class="fa-solid fa-hammer"></i> @palaisconstruction</span>
+            </div>
+            <p class="project-excerpt">Project : T House — Scope : Building Extension + Interior Design</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: Citra Garden Residence -->
+        <article class="project-card" 
+                 data-project-id="CzDunTXL0sC" 
+                 data-category="Residential" 
+                 data-featured="false"
+                 data-builder="In-House / Specialist" 
+                 data-photo="@leowardistudio"
+                 style="display: none; opacity: 0;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_045_20231031_093137_CzDunTXL0sC/image_01.jpg" alt="Citra Garden Residence" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Residential</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 1 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Citra Garden Residence</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed , 2023</span>
+              <span><i class="fa-solid fa-hammer"></i> In-House / Specialist</span>
+            </div>
+            <p class="project-excerpt">Citra Garden Residence — Facade Design : @preferadesignstudio</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: TA House , PIK 2 -->
+        <article class="project-card" 
+                 data-project-id="CmYQYWrr-YB" 
+                 data-category="Residential" 
+                 data-featured="false"
+                 data-builder="In-House / Specialist" 
+                 data-photo="Prefera Archive"
+                 style="display: none; opacity: 0;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_060_20221220_060321_CmYQYWrr-YB/image_01.jpg" alt="TA House , PIK 2" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Residential</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 1 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">TA House , PIK 2</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> On going , 2022</span>
+              <span><i class="fa-solid fa-hammer"></i> In-House / Specialist</span>
+            </div>
+            <p class="project-excerpt">TA House, PIK 2 — Status : On going , 2022</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: Omoide House , Citra 2 -->
+        <article class="project-card" 
+                 data-project-id="ChrP2RDLpaK" 
+                 data-category="Residential" 
+                 data-featured="false"
+                 data-builder="In-House / Specialist" 
+                 data-photo="@leowardistudio @motoin.terior"
+                 style="display: none; opacity: 0;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_069_20220825_082718_ChrP2RDLpaK/image_01.jpg" alt="Omoide House , Citra 2" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Residential</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 5 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Omoide House , Citra 2</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed , 2022</span>
+              <span><i class="fa-solid fa-hammer"></i> In-House / Specialist</span>
+            </div>
+            <p class="project-excerpt">Omoide House , Citra 2 — Status : Completed , 2022</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: AG House Modern Living -->
+        <article class="project-card" 
+                 data-project-id="C65adZRrfVm" 
+                 data-category="Residential" 
+                 data-featured="false"
+                 data-builder="@fammanusantara" 
+                 data-photo="@leowardistudio"
+                 style="display: none; opacity: 0;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_039_20240513_053415_C65adZRrfVm/image_01.jpg" alt="AG House Modern Living" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Residential</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 4 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">AG House Modern Living</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed , 2023</span>
+              <span><i class="fa-solid fa-hammer"></i> @fammanusantara</span>
+            </div>
+            <p class="project-excerpt">AG House — Status : Completed , 2023</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: Tjoetji Sepatoe , Hublife -->
+        <article class="project-card" 
+                 data-project-id="DbLAANngWfz" 
+                 data-category="Commercial &amp; Retail" 
+                 data-featured="true"
+                 data-builder="@palaisconstruction" 
+                 data-photo="Prefera Archive"
+                 style="display: flex; opacity: 1;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_001_20260724_101401_DbLAANngWfz/image_01.jpg" alt="Tjoetji Sepatoe , Hublife" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Commercial &amp; Retail</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 4 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Tjoetji Sepatoe , Hublife</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed , 2026</span>
+              <span><i class="fa-solid fa-hammer"></i> @palaisconstruction</span>
+            </div>
+            <p class="project-excerpt">Project : Tjoetji Sepatoe , Hublife — Status : Completed , 2026</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: Little Athlete , Gading Serpong -->
+        <article class="project-card" 
+                 data-project-id="DP0HV-lAa_4" 
+                 data-category="Commercial &amp; Retail" 
+                 data-featured="true"
+                 data-builder="In-House / Specialist" 
+                 data-photo="Prefera Archive"
+                 style="display: flex; opacity: 1;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_013_20251015_031017_DP0HV-lAa_4/image_01.jpg" alt="Little Athlete , Gading Serpong" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Commercial &amp; Retail</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 5 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Little Athlete , Gading Serpong</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed, 2025</span>
+              <span><i class="fa-solid fa-hammer"></i> In-House / Specialist</span>
+            </div>
+            <p class="project-excerpt">Project : Little Athlete , Gading Serpong, Tangerang — Status : Completed, 2025</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: The Risman Hotel Lounge -->
+        <article class="project-card" 
+                 data-project-id="C7DvbB2L5OC" 
+                 data-category="Commercial &amp; Retail" 
+                 data-featured="true"
+                 data-builder="@riformainterior.id @hendrasutianto" 
+                 data-photo="Prefera Archive"
+                 style="display: flex; opacity: 1;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_036_20240517_054950_C7DvbB2L5OC/image_01.jpg" alt="The Risman Hotel Lounge" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Commercial &amp; Retail</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 4 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">The Risman Hotel Lounge</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed, 2023</span>
+              <span><i class="fa-solid fa-hammer"></i> @riformainterior.id @hendrasutianto</span>
+            </div>
+            <p class="project-excerpt">The Risman Hotel — status : Completed, 2023</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: Tjoetji Sepatoe , PIK -->
+        <article class="project-card" 
+                 data-project-id="DPQT_BvAQqR" 
+                 data-category="Commercial &amp; Retail" 
+                 data-featured="false"
+                 data-builder="@palaisconstruction" 
+                 data-photo="Prefera Archive"
+                 style="display: none; opacity: 0;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_017_20251001_052805_DPQT_BvAQqR/image_01.jpg" alt="Tjoetji Sepatoe , PIK" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Commercial &amp; Retail</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 6 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Tjoetji Sepatoe , PIK</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed , 2025</span>
+              <span><i class="fa-solid fa-hammer"></i> @palaisconstruction</span>
+            </div>
+            <p class="project-excerpt">Project : Tjoetji Sepatoe , PIK — Status : Completed , 2025</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: Tjoetji Sepatoe , Mall Kelapa Gading 3 -->
+        <article class="project-card" 
+                 data-project-id="DPNa-3ikoSN" 
+                 data-category="Commercial &amp; Retail" 
+                 data-featured="false"
+                 data-builder="@palaisconstruction" 
+                 data-photo="Prefera Archive"
+                 style="display: none; opacity: 0;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_018_20250930_023131_DPNa-3ikoSN/image_01.jpg" alt="Tjoetji Sepatoe , Mall Kelapa Gading 3" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Commercial &amp; Retail</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 6 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Tjoetji Sepatoe , Mall Kelapa Gading 3</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed , 2025</span>
+              <span><i class="fa-solid fa-hammer"></i> @palaisconstruction</span>
+            </div>
+            <p class="project-excerpt">Project : Tjoetji Sepatoe , Mall Kelapa Gading 3 — Status : Completed , 2025</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: Tjoetji Sepatoe , Cilandak -->
+        <article class="project-card" 
+                 data-project-id="DFePunBTsW2" 
+                 data-category="Commercial &amp; Retail" 
+                 data-featured="false"
+                 data-builder="@palaisconstruction" 
+                 data-photo="Prefera Archive"
+                 style="display: none; opacity: 0;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_022_20250131_020619_DFePunBTsW2/image_01.jpg" alt="Tjoetji Sepatoe , Cilandak" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Commercial &amp; Retail</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 6 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Tjoetji Sepatoe , Cilandak</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed , 2025</span>
+              <span><i class="fa-solid fa-hammer"></i> @palaisconstruction</span>
+            </div>
+            <p class="project-excerpt">Project : Tjoetji Sepatoe , Cilandak — Status : Completed , 2025</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: Dharma Audio Retail Store -->
+        <article class="project-card" 
+                 data-project-id="C96ZNEDzwIm" 
+                 data-category="Commercial &amp; Retail" 
+                 data-featured="false"
+                 data-builder="In-House / Specialist" 
+                 data-photo="@isai.studios"
+                 style="display: none; opacity: 0;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_030_20240727_041642_C96ZNEDzwIm/image_01.jpg" alt="Dharma Audio Retail Store" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Commercial &amp; Retail</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 3 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Dharma Audio Retail Store</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed</span>
+              <span><i class="fa-solid fa-hammer"></i> In-House / Specialist</span>
+            </div>
+            <p class="project-excerpt">Dharma Audio Retail Store — Status : Completed</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: Urban Coffee Shop Redesign -->
+        <article class="project-card" 
+                 data-project-id="Ckh3XXcro2N" 
+                 data-category="Commercial &amp; Retail" 
+                 data-featured="false"
+                 data-builder="In-House / Specialist" 
+                 data-photo="Prefera Archive"
+                 style="display: none; opacity: 0;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_063_20221104_063423_Ckh3XXcro2N/image_01.jpg" alt="Urban Coffee Shop Redesign" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Commercial &amp; Retail</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 2 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Urban Coffee Shop Redesign</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed</span>
+              <span><i class="fa-solid fa-hammer"></i> In-House / Specialist</span>
+            </div>
+            <p class="project-excerpt">coffee shop interior-redesign in the middle of the city — cc : @kama.stay</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: Gading Orchard Facade Renovation -->
+        <article class="project-card" 
+                 data-project-id="DPf9Xi1AWFW" 
+                 data-category="Architecture &amp; Facade" 
+                 data-featured="true"
+                 data-builder="@fammanusantara @danielgiinn" 
+                 data-photo="Prefera Archive"
+                 style="display: flex; opacity: 1;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_016_20251007_071818_DPf9Xi1AWFW/image_01.jpg" alt="Gading Orchard Facade Renovation" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Architecture &amp; Facade</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 6 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Gading Orchard Facade Renovation</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed , 2024</span>
+              <span><i class="fa-solid fa-hammer"></i> @fammanusantara @danielgiinn</span>
+            </div>
+            <p class="project-excerpt">Project : Gading Orchard Facade Renovation — Status : Completed , 2024</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: Cacamarihouse Architectural Facade -->
+        <article class="project-card" 
+                 data-project-id="C11SYf9r93n" 
+                 data-category="Architecture &amp; Facade" 
+                 data-featured="true"
+                 data-builder="In-House / Specialist" 
+                 data-photo="Prefera Archive"
+                 style="display: flex; opacity: 1;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_042_20240108_082944_C11SYf9r93n/image_01.jpg" alt="Cacamarihouse Architectural Facade" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Architecture &amp; Facade</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 2 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Cacamarihouse Architectural Facade</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> completed , 2023</span>
+              <span><i class="fa-solid fa-hammer"></i> In-House / Specialist</span>
+            </div>
+            <p class="project-excerpt">@cacamarihouse ‘s face 3D preview — status : completed , 2023</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: T House Golf Island Facade -->
+        <article class="project-card" 
+                 data-project-id="CorhDNuANRr" 
+                 data-category="Architecture &amp; Facade" 
+                 data-featured="true"
+                 data-builder="In-House / Specialist" 
+                 data-photo="Prefera Archive"
+                 style="display: flex; opacity: 1;">
+          <div class="project-thumb-wrap">
+            <img src="" alt="T House Golf Island Facade" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Architecture &amp; Facade</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 0 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">T House Golf Island Facade</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed</span>
+              <span><i class="fa-solid fa-hammer"></i> In-House / Specialist</span>
+            </div>
+            <p class="project-excerpt">on progress T House , Golf Island PIK</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: Bollen House Architectural Proposal -->
+        <article class="project-card" 
+                 data-project-id="C3ZzQckrxBr" 
+                 data-category="Architecture &amp; Facade" 
+                 data-featured="false"
+                 data-builder="In-House / Specialist" 
+                 data-photo="Prefera Archive"
+                 style="display: none; opacity: 0;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_041_20240216_092103_C3ZzQckrxBr/image_01.jpg" alt="Bollen House Architectural Proposal" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Architecture &amp; Facade</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 1 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Bollen House Architectural Proposal</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed</span>
+              <span><i class="fa-solid fa-hammer"></i> In-House / Specialist</span>
+            </div>
+            <p class="project-excerpt">Bollen House - draft 01. proposal 2024</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: Modern Linear Facade Proposal -->
+        <article class="project-card" 
+                 data-project-id="C11NjYrr0j6" 
+                 data-category="Architecture &amp; Facade" 
+                 data-featured="false"
+                 data-builder="In-House / Specialist" 
+                 data-photo="Prefera Archive"
+                 style="display: none; opacity: 0;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_044_20240108_074732_C11NjYrr0j6/image_01.jpg" alt="Modern Linear Facade Proposal" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Architecture &amp; Facade</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 3 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Modern Linear Facade Proposal</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed</span>
+              <span><i class="fa-solid fa-hammer"></i> In-House / Specialist</span>
+            </div>
+            <p class="project-excerpt">Facade Design proposal early in 2024 #preferadesign #interiordesign #interiordesignjakarta #interiorarchitecture</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: Citra Garden Exterior Transformation -->
+        <article class="project-card" 
+                 data-project-id="CzDS5HMrav3" 
+                 data-category="Architecture &amp; Facade" 
+                 data-featured="false"
+                 data-builder="In-House / Specialist" 
+                 data-photo="@leowardistudio"
+                 style="display: none; opacity: 0;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_046_20231031_052923_CzDS5HMrav3/image_01.jpg" alt="Citra Garden Exterior Transformation" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Architecture &amp; Facade</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 1 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Citra Garden Exterior Transformation</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed , 2023</span>
+              <span><i class="fa-solid fa-hammer"></i> In-House / Specialist</span>
+            </div>
+            <p class="project-excerpt">Citra Garden Residence — Facade Design : @preferadesignstudio</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: Architectural Facade Realization -->
+        <article class="project-card" 
+                 data-project-id="CZ86WmCLXmg" 
+                 data-category="Architecture &amp; Facade" 
+                 data-featured="false"
+                 data-builder="In-House / Specialist" 
+                 data-photo="Prefera Archive"
+                 style="display: none; opacity: 0;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_076_20220214_085439_CZ86WmCLXmg/image_01.jpg" alt="Architectural Facade Realization" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Architecture &amp; Facade</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 2 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Architectural Facade Realization</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> On Going</span>
+              <span><i class="fa-solid fa-hammer"></i> In-House / Specialist</span>
+            </div>
+            <p class="project-excerpt">RM Residence , 2021 — Status : On Going</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: Tennis Corner for Mr. KSW -->
+        <article class="project-card" 
+                 data-project-id="DTz3Q-YgZZb" 
+                 data-category="Bespoke Space" 
+                 data-featured="true"
+                 data-builder="In-House / Specialist" 
+                 data-photo="Prefera Archive"
+                 style="display: flex; opacity: 1;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_012_20260122_105522_DTz3Q-YgZZb/image_01.jpg" alt="Tennis Corner for Mr. KSW" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Bespoke Space</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 5 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Tennis Corner for Mr. KSW</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed , 2026</span>
+              <span><i class="fa-solid fa-hammer"></i> In-House / Specialist</span>
+            </div>
+            <p class="project-excerpt">Tennis Corner for Mr. KSW — Status : Completed , 2026</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: TA House Custom Joinery Details -->
+        <article class="project-card" 
+                 data-project-id="CtQso_nrhAh" 
+                 data-category="Bespoke Space" 
+                 data-featured="true"
+                 data-builder="@palaisconstruction" 
+                 data-photo="Prefera Archive"
+                 style="display: flex; opacity: 1;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_056_20230609_071608_CtQso_nrhAh/image_01.jpg" alt="TA House Custom Joinery Details" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Bespoke Space</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 4 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">TA House Custom Joinery Details</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed, 2023</span>
+              <span><i class="fa-solid fa-hammer"></i> @palaisconstruction</span>
+            </div>
+            <p class="project-excerpt">TA House - Details. — 📍 : PIK2</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: Japanese Zen Tatami Lounge -->
+        <article class="project-card" 
+                 data-project-id="CtOTSi7LcAW" 
+                 data-category="Bespoke Space" 
+                 data-featured="true"
+                 data-builder="In-House / Specialist" 
+                 data-photo="Prefera Archive"
+                 style="display: flex; opacity: 1;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_058_20230608_085608_CtOTSi7LcAW/image_01.jpg" alt="Japanese Zen Tatami Lounge" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Bespoke Space</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 3 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Japanese Zen Tatami Lounge</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed</span>
+              <span><i class="fa-solid fa-hammer"></i> In-House / Specialist</span>
+            </div>
+            <p class="project-excerpt">Japanese vibe never fails your home. Recalling our project back in 2021 , built by our partner in crime @palaisconstruction</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: BS House Bespoke Dining &amp; Credenza -->
+        <article class="project-card" 
+                 data-project-id="DY3y13kgcu0" 
+                 data-category="Bespoke Space" 
+                 data-featured="false"
+                 data-builder="@palaisconstruction" 
+                 data-photo="@williamsaimin"
+                 style="display: none; opacity: 0;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_004_20260528_061039_DY3y13kgcu0/image_01.jpg" alt="BS House Bespoke Dining &amp; Credenza" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Bespoke Space</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 5 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">BS House Bespoke Dining &amp; Credenza</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed , 2026</span>
+              <span><i class="fa-solid fa-hammer"></i> @palaisconstruction</span>
+            </div>
+            <p class="project-excerpt">Project : BS House , Cosmo Park — Status : Completed , 2026</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: DA House Master Suite &amp; Custom Wardrobe -->
+        <article class="project-card" 
+                 data-project-id="DW55Kx2gQKV" 
+                 data-category="Bespoke Space" 
+                 data-featured="false"
+                 data-builder="@palaisconstruction" 
+                 data-photo="@leowardistudio"
+                 style="display: none; opacity: 0;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_009_20260409_084137_DW55Kx2gQKV/image_01.jpg" alt="DA House Master Suite &amp; Custom Wardrobe" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Bespoke Space</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 3 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">DA House Master Suite &amp; Custom Wardrobe</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed , 2025</span>
+              <span><i class="fa-solid fa-hammer"></i> @palaisconstruction</span>
+            </div>
+            <p class="project-excerpt">Project : DA House , New Jasmine — Status : Completed , 2025</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: YJ House Slatted Acoustic Kitchen Island -->
+        <article class="project-card" 
+                 data-project-id="DK1ZQZmziZ2" 
+                 data-category="Bespoke Space" 
+                 data-featured="false"
+                 data-builder="@sperointerior" 
+                 data-photo="Prefera Archive"
+                 style="display: none; opacity: 0;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_020_20250613_082905_DK1ZQZmziZ2/image_01.jpg" alt="YJ House Slatted Acoustic Kitchen Island" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Bespoke Space</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 6 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">YJ House Slatted Acoustic Kitchen Island</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed , 2025</span>
+              <span><i class="fa-solid fa-hammer"></i> @sperointerior</span>
+            </div>
+            <p class="project-excerpt">Project : YJ House , Sunter — Status : Completed , 2025</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+
+        <!-- Project: Cosmo Park Integrated Media Wall -->
+        <article class="project-card" 
+                 data-project-id="DXtIoOzgQlp" 
+                 data-category="Bespoke Space" 
+                 data-featured="false"
+                 data-builder="@palaisconstruction" 
+                 data-photo="@williamsaimin"
+                 style="display: none; opacity: 0;">
+          <div class="project-thumb-wrap">
+            <img src="/prefera-temp/assets/projects/post_006_20260429_061759_DXtIoOzgQlp/image_01.jpg" alt="Cosmo Park Integrated Media Wall" loading="lazy" />
+            <div class="project-badges">
+              <span class="badge badge-cat">Bespoke Space</span>
+              <span class="badge badge-count"><i class="fa-regular fa-images"></i> 6 Views</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Cosmo Park Integrated Media Wall</h3>
+            <div class="project-meta">
+              <span><i class="fa-regular fa-calendar"></i> Completed , 2026</span>
+              <span><i class="fa-solid fa-hammer"></i> @palaisconstruction</span>
+            </div>
+            <p class="project-excerpt">Project : BS House , Cosmo Park — Status : Completed , 2026</p>
+            <span class="project-footer-link">Explore Gallery <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About & Philosophy (Light Linen Ivory Section) -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <!-- Visual Composition -->
+        <div class="about-images-composition">
+          <div class="about-img-main">
+            <img src="/prefera-temp/assets/projects/post_006_20260429_061759_DXtIoOzgQlp/image_01.jpg" alt="Prefera Studio Architectural Detail" />
+          </div>
+          <div class="about-quote-card">
+            <blockquote>
+              "Good interior architecture does not simply decorate walls; it choreographs light, honors material authenticity, and brings a profound sense of calm to everyday rituals."
+            </blockquote>
+            <div class="quote-author">Richard Saimin</div>
+            <div class="quote-role">Principal & Interior Consultant, Prefera Design Studio</div>
+          </div>
+        </div>
+
+        <!-- Narrative Content -->
+        <div class="about-content">
+          <span class="section-label" style="color: var(--color-gold-dark);">Philosophy & Vision</span>
+          <h2 class="section-heading" style="color: var(--color-slate-900);">Designing Spaces That Breathe With Timeless Purpose.</h2>
+          <p class="section-desc">
+            Established in 2016 in North Jakarta, <strong>Prefera Design Studio</strong> has built a reputation for crafting discerning residential sanctuaries and elevated commercial environments across Indonesia.
+          </p>
+          <p class="section-desc">
+            We believe that a space should evoke emotional resonance. Our process begins with deep spatial analysis, ensuring that proportion, acoustics, natural lighting, and tactile surfaces harmonize seamlessly.
+          </p>
+
+          <div class="pillars-grid">
+            <div class="pillar-item">
+              <span class="pillar-num">01</span>
+              <div class="pillar-text">
+                <h4>Spatial Narrative</h4>
+                <p>Tailoring every layout to the client's distinct lifestyle, enhancing fluid transitions between private retreat and social gathering.</p>
+              </div>
+            </div>
+            <div class="pillar-item">
+              <span class="pillar-num">02</span>
+              <div class="pillar-text">
+                <h4>Material Integrity</h4>
+                <p>Curating honest stones, European white oak, warm linen, textured plasters, and brushed brass that age gracefully over decades.</p>
+              </div>
+            </div>
+            <div class="pillar-item">
+              <span class="pillar-num">03</span>
+              <div class="pillar-text">
+                <h4>Artisan Execution</h4>
+                <p>Partnering with premier builders and millwork artisans (such as Palais Construction and Spero Interior) to guarantee millimeter precision.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services & Scope -->
+  <section id="services" class="services-section">
+    <div class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+        <span class="section-label">Our Capabilities</span>
+        <h2 class="section-heading">Comprehensive Design Services</h2>
+        <p class="section-desc">From initial architectural planning to final art curation and handover, we offer full-spectrum consultancy.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+          <h3 class="service-title">Interior Architecture & Space Planning</h3>
+          <p class="service-desc">Complete spatial restructuring, partition reconfiguration, structural opening optimization, and ergonomic movement studies.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-house-chimney-window"></i></div>
+          <h3 class="service-title">Residential Sanctuary Design</h3>
+          <p class="service-desc">Luxury private residences, penthouses, and townhouses crafted with bespoke master suites, chef kitchens, and serene living lounges.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-shop"></i></div>
+          <h3 class="service-title">Commercial & Retail Experiences</h3>
+          <p class="service-desc">Boutique retail stores, specialty clinics, cafes, and flagship showrooms engineered to amplify brand identity and visitor retention.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-layer-group"></i></div>
+          <h3 class="service-title">Bespoke Millwork & Furniture</h3>
+          <p class="service-desc">Custom integrated cabinetry, architectural feature walls, walk-in closets, and tailored furniture manufactured to exact specifications.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-lightbulb"></i></div>
+          <h3 class="service-title">Lighting & Atmospheric Design</h3>
+          <p class="service-desc">Architectural coves, task lighting, and decorative light fixtures coordinated with industry specialists to set the ideal mood.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+          <h3 class="service-title">Site Supervision & Project Delivery</h3>
+          <p class="service-desc">Rigorous on-site quality assurance, contractor coordination, and schedule management from groundbreaking to key handover.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Studio Process -->
+  <section id="process" class="process-section">
+    <div class="container">
+      <div style="text-align: center; max-width: 680px; margin: 0 auto;">
+        <span class="section-label">Methodology</span>
+        <h2 class="section-heading">How We Bring Your Space to Life</h2>
+        <p class="section-desc">A structured, transparent four-phase process ensuring creative excellence and budget adherence.</p>
+      </div>
+
+      <div class="process-steps">
+        <div class="step-card">
+          <div class="step-circle">01</div>
+          <h3>Discovery & Spatial Brief</h3>
+          <p>Initial consultation to define lifestyle requirements, spatial goals, functional program, and budget framework.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-circle">02</div>
+          <h3>Concept & 3D Visualization</h3>
+          <p>Development of mood boards, material palettes, spatial layouts, and photorealistic 3D renderings of every key area.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-circle">03</div>
+          <h3>Technical Detailing</h3>
+          <p>Detailed construction blueprints, MEP engineering coordination, custom joinery shop drawings, and finish schedules.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-circle">04</div>
+          <h3>Supervision & Styling</h3>
+          <p>Direct on-site oversight of contractor execution, loose furniture installation, art placement, and final reveal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact, Location & Google Map Preview -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Direct Studio Info & Google Map Preview -->
+        <div class="contact-info-panel">
+          <span class="section-label">Connect & Visit</span>
+          <h2 class="section-heading">Begin Your Project Consultation.</h2>
+          <p class="section-desc">
+            Whether you are embarking on a new residential build, a penthouse renovation, or a flagship commercial space, we welcome the opportunity to discuss your vision.
+          </p>
+
+          <div class="info-cards">
+            <div class="info-box">
+              <div class="info-box-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="info-box-content">
+                <h4>Studio Office</h4>
+                <p>Pemandangan II no.12, RT.1/RW.1 Pademangan Bar, Jakarta Utara, 14420<br/><em>(the.creative / OYO Urban Residence)</em></p>
+              </div>
+            </div>
+
+            <!-- Google Map Preview -->
+            <div class="map-preview-wrap">
+              <iframe 
+                title="Prefera Design Studio Location Map"
+                src="https://maps.google.com/maps?q=Pemandangan%20II%20no.12,%20Pademangan%20Barat,%20Jakarta%20Utara&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                width="100%" 
+                height="220" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+              <a href="https://maps.google.com/?q=Pemandangan+II+no.12,+Pademangan+Barat,+Jakarta+Utara" target="_blank" rel="noopener" class="map-direct-link">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in Google Maps Navigation
+              </a>
+            </div>
+
+            <div class="info-box">
+              <div class="info-box-icon"><i class="fa-brands fa-whatsapp"></i></div>
+              <div class="info-box-content">
+                <h4>Direct WhatsApp Quick Chat</h4>
+                <p><a href="https://wa.me/6287884156045" target="_blank" rel="noopener"><strong>0878-8415-6045</strong> (+62 878 8415 6045)</a></p>
+              </div>
+            </div>
+
+            <div class="info-box">
+              <div class="info-box-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="info-box-content">
+                <h4>Email Inquiries</h4>
+                <p><a href="mailto:preferastudio@gmail.com">preferastudio@gmail.com</a></p>
+              </div>
+            </div>
+
+            <div class="info-box">
+              <div class="info-box-icon"><i class="fa-brands fa-instagram"></i></div>
+              <div class="info-box-content">
+                <h4>Instagram Gallery</h4>
+                <p><a href="https://www.instagram.com/preferadesignstudio/" target="_blank" rel="noopener">@preferadesignstudio</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Consultation Inquiry Form -->
+        <div class="inquiry-form-card">
+          <h3>Request a Consultation</h3>
+          <p>Provide a few details about your project, and Richard Saimin will personally review your brief.</p>
+
+          <form id="inquiryForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="formName">Your Full Name *</label>
+                <input type="text" id="formName" class="form-control" placeholder="e.g. Alexander Chen" required />
+              </div>
+              <div class="form-group">
+                <label for="formPhone">Phone / WhatsApp *</label>
+                <input type="tel" id="formPhone" class="form-control" placeholder="08..." required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="formEmail">Email Address *</label>
+                <input type="email" id="formEmail" class="form-control" placeholder="alexander@domain.com" required />
+              </div>
+              <div class="form-group">
+                <label for="formType">Project Classification</label>
+                <select id="formType" class="form-control">
+                  <option value="Residential Interior">Residential Interior (House / Villa)</option>
+                  <option value="Apartment / Penthouse">Apartment / Penthouse</option>
+                  <option value="Commercial / Retail Store">Commercial / Retail Store</option>
+                  <option value="Hospitality / Cafe / Restaurant">Hospitality / Cafe / Restaurant</option>
+                  <option value="Facade & Architectural Renovation">Facade & Architectural Renovation</option>
+                  <option value="Bespoke Recreation Space">Bespoke Recreation Space</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="formLocation">Project Location & Estimated Target Date</label>
+              <input type="text" id="formLocation" class="form-control" placeholder="e.g. Pantai Indah Kapuk, Q2 2027" />
+            </div>
+
+            <div class="form-group">
+              <label for="formMessage">Project Scope & Aspirations</label>
+              <textarea id="formMessage" class="form-control" placeholder="Tell us about the space, square footage, design style preferences, or any specific requirements..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-gold" style="width: 100%; padding: 1rem;">
+              Send Inquiry via WhatsApp <i class="fa-brands fa-whatsapp"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Project Gallery Lightbox Modal -->
+  <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalProjectTitle">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Project Modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-body">
+        <!-- Main Large Image View -->
+        <div class="modal-gallery-main">
+          <img id="modalMainImage" src="" alt="Project View" />
+        </div>
+
+        <!-- Thumbnails Row -->
+        <div class="modal-thumbs-row" id="modalThumbsRow"></div>
+
+        <!-- Project Meta & Caption Details -->
+        <div class="modal-header-info">
+          <div>
+            <span class="badge badge-cat" id="modalCategory">Category</span>
+            <h2 class="modal-title" id="modalProjectTitle" style="margin-top: 0.5rem;">Project Title</h2>
+          </div>
+        </div>
+
+        <div class="modal-meta-grid">
+          <div class="modal-meta-item">
+            <h5>Status & Year</h5>
+            <p id="modalStatus">Completed</p>
+          </div>
+          <div class="modal-meta-item">
+            <h5>Built By</h5>
+            <p id="modalBuilder">Contractor Credit</p>
+          </div>
+          <div class="modal-meta-item">
+            <h5>Photography</h5>
+            <p id="modalPhoto">Photographer Credit</p>
+          </div>
+        </div>
+
+        <div class="modal-caption-text" id="modalCaption">
+          Project description and story...
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Quick Link Button (087884156045) -->
+  <a href="https://wa.me/6287884156045?text=Hello%20Prefera%20Design%20Studio,%20I%20would%20like%20to%20consult%20about%20a%20project." 
+     class="floating-whatsapp-btn" 
+     target="_blank" 
+     rel="noopener" 
+     aria-label="Direct WhatsApp Consultation with Prefera Design Studio">
+    <span class="whatsapp-pulse"></span>
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="whatsapp-label">Chat WhatsApp (0878-8415-6045)</span>
+  </a>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#hero" class="brand-logo">
+            <span class="logo-prefera">p<span class="logo-r">r</span>efera</span>
+            <span class="logo-subtitle">design studio</span>
+          </a>
+          <p>
+            An interior and architectural design practice dedicated to creating sensorial atmospheres and timeless living spaces in Jakarta and beyond.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#projects">Selected Portfolio</a></li>
+            <li><a href="#about">Studio Philosophy</a></li>
+            <li><a href="#services">Our Capabilities</a></li>
+            <li><a href="#process">The Process</a></li>
+            <li><a href="#contact">Location & Inquiries</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Project Disciplines</h4>
+          <ul class="footer-links">
+            <li><a href="#projects">Luxury Residences (8)</a></li>
+            <li><a href="#projects">Boutique Retail (8)</a></li>
+            <li><a href="#projects">Architectural Facades (7)</a></li>
+            <li><a href="#projects">Bespoke Millwork (7)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Studio Office</h4>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 0.75rem;">
+            Pemandangan II no.12, Pademangan Barat, Jakarta Utara, 14420
+          </p>
+          <p style="font-size: 0.88rem; color: var(--color-gold); margin-bottom: 0.5rem;">
+            Richard Saimin<br/>
+            <span style="color: var(--text-muted); font-size: 0.8rem;">Interior Consultant</span>
+          </p>
+          <p style="font-size: 0.88rem;">
+            <a href="https://wa.me/6287884156045" style="color: var(--color-whatsapp);" target="_blank" rel="noopener">
+              <i class="fa-brands fa-whatsapp"></i> 0878-8415-6045
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Prefera Design Studio. All rights reserved.</div>
+        <div>Designed & Developed for Prefera Design Studio.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script is:inline src="/prefera-temp/js/main.js"></script>
+</body>
+</html>
